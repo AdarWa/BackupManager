@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  backupmanager:
+    image: backupmanager
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 5678:5678
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - '/home/adarw/Programming2/BackupManager/restore:/app/restore'
